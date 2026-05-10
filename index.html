@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico Capilar — Studio Louis × HEBRÁN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <span class="brand-sub">Studio Louis ×</span>
+    <h1 class="brand-title">HEBRÁN</h1>
+    <p class="brand-tagline">Formulario Unificado de Diagnóstico Capilar</p>
+  </header>
+
+  <form id="frm" novalidate>
+
+    <!-- ═══════════════════════════════════════
+         DATOS DEL CLIENTE
+    ═══════════════════════════════════════ -->
+    <section class="form-section">
+      <div class="section-header">
+        <div class="section-num">★</div>
+        <h2>Datos de la Cliente</h2>
+      </div>
+      <div class="section-body">
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label for="nombre">Nombre completo <span class="required-mark">*</span></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre de la cliente" autocomplete="name" />
+            <span class="field-error" id="err-nombre">El nombre es obligatorio</span>
+          </div>
+
+          <div class="form-field">
+            <label for="fechaDiagnostico">Fecha del diagnóstico</label>
+            <input type="date" id="fechaDiagnostico" name="fechaDiagnostico" />
+          </div>
+
+          <div class="form-field">
+            <label for="cumpleanos">Fecha de cumpleaños</label>
+            <input type="date" id="cumpleanos" name="cumpleanos" />
+          </div>
+
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+(506) 8888-8888" autocomplete="tel" />
+          </div>
+
+          <div class="form-field">
+            <label for="cedula">Cédula</label>
+            <input type="text" id="cedula" name="cedula" placeholder="1-0000-0000" />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" autocomplete="email" />
+            <span class="field-error" id="err-email">Ingrese un correo válido</span>
+          </div>
+
+          <div class="form-field">
+            <label for="ocupacion">Ocupación</label>
+            <input type="text" id="ocupacion" name="ocupacion" placeholder="Profesión u ocupación" />
+          </div>
+
+          <div class="form-field">
+            <label for="estilista">Estilista / Alumna</label>
+            <input type="text" id="estilista" name="estilista" placeholder="Nombre del estilista" />
+          </div>
+
+          <div class="form-field full-width">
+            <label for="direccion">Dirección / Lugar donde vive</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Ciudad, barrio o dirección" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TABS
+    ═══════════════════════════════════════ -->
+    <div class="tabs-wrapper">
+      <nav class="tabs-nav" role="tablist">
+        <button type="button" class="tab-btn active" data-tab="tab1" role="tab" aria-selected="true">
+          Diagnóstico Técnico
+          <span class="tab-sub">Studio Louis</span>
+        </button>
+        <button type="button" class="tab-btn" data-tab="tab2" role="tab" aria-selected="false">
+          Diagnóstico Capilar
+          <span class="tab-sub">Método HEBRÁN</span>
+        </button>
+      </nav>
+
+      <!-- ─────────────────────────────────────
+           TAB 1: DIAGNÓSTICO TÉCNICO
+      ───────────────────────────────────── -->
+      <div class="tab-pane active" id="tab1" role="tabpanel">
+        <div class="tab-inner">
+
+          <!-- Tipo de rostro -->
+          <div class="subsection">
+            <div class="subsection-title">Tipo de rostro</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="radio" name="tipoRostro" value="Alargado"><span>Alargado</span></label>
+              <label class="option-pill"><input type="radio" name="tipoRostro" value="Triangular"><span>Triangular</span></label>
+              <label class="option-pill"><input type="radio" name="tipoRostro" value="Ovalado"><span>Ovalado</span></label>
+              <label class="option-pill"><input type="radio" name="tipoRostro" value="Corazón"><span>Corazón</span></label>
+              <label class="option-pill"><input type="radio" name="tipoRostro" value="Redondo"><span>Redondo</span></label>
+              <label class="option-pill"><input type="radio" name="tipoRostro" value="Diamante"><span>Diamante</span></label>
+            </div>
+          </div>
+
+          <!-- Longitud -->
+          <div class="subsection">
+            <div class="subsection-title">Longitud del cabello</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="radio" name="longitudCabello" value="Largo"><span>Largo</span></label>
+              <label class="option-pill"><input type="radio" name="longitudCabello" value="Mediano"><span>Mediano</span></label>
+              <label class="option-pill"><input type="radio" name="longitudCabello" value="Corto"><span>Corto</span></label>
+              <label class="option-pill"><input type="radio" name="longitudCabello" value="Mediano a corto"><span>Mediano a corto</span></label>
+            </div>
+          </div>
+
+          <!-- Textura -->
+          <div class="subsection">
+            <div class="subsection-title">Textura del cabello</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="radio" name="texturaCabello" value="Grueso"><span>Grueso</span></label>
+              <label class="option-pill"><input type="radio" name="texturaCabello" value="Delgado"><span>Delgado</span></label>
+              <label class="option-pill"><input type="radio" name="texturaCabello" value="Fino"><span>Fino</span></label>
+              <label class="option-pill"><input type="radio" name="texturaCabello" value="Mediano"><span>Mediano</span></label>
+            </div>
+          </div>
+
+          <!-- Porosidad -->
+          <div class="subsection">
+            <div class="subsection-title">Porosidad del cabello</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="checkbox" name="porosidad" value="Virgen"><span>Virgen</span></label>
+              <label class="option-pill"><input type="checkbox" name="porosidad" value="Teñido"><span>Teñido</span></label>
+              <label class="option-pill"><input type="checkbox" name="porosidad" value="Decoloración"><span>Decoloración</span></label>
+              <label class="option-pill"><input type="checkbox" name="porosidad" value="Color natural"><span>Color natural</span></label>
+              <div class="option-with-input">
+                <label class="option-pill"><input type="checkbox" name="porosidad" value="Otros"><span>Otros:</span></label>
+                <input type="text" id="porosidadOtros" name="porosidadOtros" placeholder="Especificar..." />
+              </div>
+            </div>
+          </div>
+
+          <!-- Cantidad de canas -->
+          <div class="subsection">
+            <div class="subsection-title">Cantidad de canas</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="radio" name="cantidadCanas" value="10%"><span>10%</span></label>
+              <label class="option-pill"><input type="radio" name="cantidadCanas" value="30%"><span>30%</span></label>
+              <label class="option-pill"><input type="radio" name="cantidadCanas" value="50%"><span>50%</span></label>
+              <label class="option-pill"><input type="radio" name="cantidadCanas" value="80%"><span>80%</span></label>
+              <label class="option-pill"><input type="radio" name="cantidadCanas" value="100%"><span>100%</span></label>
+              <div class="option-with-input">
+                <label class="option-pill"><input type="radio" name="cantidadCanas" value="__custom__" id="canas-custom"><span>Otro %:</span></label>
+                <input type="number" id="cantidadCanasCustom" name="cantidadCanasCustom" min="0" max="100" placeholder="%" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Tipo de cana -->
+          <div class="subsection">
+            <div class="subsection-title">Tipo de cana</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="radio" name="tipoCana" value="Blanca"><span>Blanca</span></label>
+              <label class="option-pill"><input type="radio" name="tipoCana" value="Amarilla"><span>Amarilla</span></label>
+              <label class="option-pill"><input type="radio" name="tipoCana" value="Gris"><span>Gris</span></label>
+            </div>
+          </div>
+
+          <!-- Procedimiento -->
+          <div class="subsection">
+            <div class="subsection-title">Procedimiento</div>
+            <div class="options-group">
+              <label class="option-pill"><input type="checkbox" name="procedimiento" value="Corte"><span>Corte</span></label>
+              <label class="option-pill"><input type="checkbox" name="procedimiento" value="Tinte"><span>Tinte</span></label>
+              <label class="option-pill"><input type="checkbox" name="procedimiento" value="Mechas"><span>Mechas</span></label>
+              <label class="option-pill"><input type="checkbox" name="procedimiento" value="Queratina"><span>Queratina</span></label>
+              <label class="option-pill"><input type="checkbox" name="procedimiento" value="Liso"><span>Liso</span></label>
+              <div class="option-with-input">
+                <label class="option-pill"><input type="checkbox" name="procedimiento" value="Otros"><span>Otros:</span></label>
+                <input type="text" id="procedimientoOtros" name="procedimientoOtros" placeholder="Especificar..." />
+              </div>
+            </div>
+          </div>
+
+          <div class="sep"></div>
+
+          <!-- Campos libres Parte 1 -->
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="colorNatural">Color natural del cabello</label>
+              <input type="text" id="colorNatural" name="colorNatural" placeholder="Color base natural" />
+            </div>
+            <div class="form-field">
+              <label for="colorDeseado">Color deseado</label>
+              <input type="text" id="colorDeseado" name="colorDeseado" placeholder="Color objetivo" />
+            </div>
+            <div class="form-field">
+              <label for="tecnicaUtilizar">Técnica a utilizar</label>
+              <input type="text" id="tecnicaUtilizar" name="tecnicaUtilizar" placeholder="Ej. balayáge, root shadow..." />
+            </div>
+            <div class="form-field">
+              <label for="formulaTinte">Fórmula del tinte</label>
+              <input type="text" id="formulaTinte" name="formulaTinte" placeholder="Marca / Tono / % Vol" />
+            </div>
+            <div class="form-field">
+              <label for="formulaDecoloracion">Fórmula de la decoloración</label>
+              <input type="text" id="formulaDecoloracion" name="formulaDecoloracion" placeholder="Producto / % Vol" />
+            </div>
+            <div class="form-field">
+              <label for="matizDecoloracion">Matiz de la decoloración</label>
+              <input type="text" id="matizDecoloracion" name="matizDecoloracion" placeholder="Tono matizante" />
+            </div>
+            <div class="form-field full-width">
+              <label for="tecnicaUtilizada">Técnica utilizada</label>
+              <input type="text" id="tecnicaUtilizada" name="tecnicaUtilizada" placeholder="Técnica finalmente aplicada" />
+            </div>
+            <div class="form-field full-width">
+              <label for="productosRecomendados">Productos recomendados</label>
+              <textarea id="productosRecomendados" name="productosRecomendados" placeholder="Lista de productos para el hogar..."></textarea>
+            </div>
+            <div class="form-field full-width">
+              <label for="preparacionCanas">Preparación para canas</label>
+              <textarea id="preparacionCanas" name="preparacionCanas" placeholder="Procedimiento de preparación..."></textarea>
+            </div>
+            <div class="form-field full-width">
+              <label for="preparacionBano">Preparación para baño color</label>
+              <textarea id="preparacionBano" name="preparacionBano" placeholder="Procedimiento para baño de color..."></textarea>
+            </div>
+            <div class="form-field full-width">
+              <label for="montaje">Montaje</label>
+              <textarea id="montaje" name="montaje" placeholder="Descripción del montaje..."></textarea>
+            </div>
+            <div class="form-field full-width">
+              <label for="formulaTiempoRaiz">Fórmula / Tiempo en raíz</label>
+              <textarea id="formulaTiempoRaiz" name="formulaTiempoRaiz" placeholder="Fórmula y tiempo de exposición en raíz..."></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ─────────────────────────────────────
+           TAB 2: DIAGNÓSTICO CAPILAR (HEBRÁN)
+      ───────────────────────────────────── -->
+      <div class="tab-pane" id="tab2" role="tabpanel">
+        <div class="tab-inner">
+
+          <!-- Historial químico -->
+          <div class="subsection">
+            <div class="subsection-title">Historial químico del cabello</div>
+            <div class="options-group" style="margin-bottom:14px;">
+              <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Ninguna"><span>Ninguna</span></label>
+              <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Tinte"><span>Tinte</span></label>
+              <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Decoloración"><span>Decoloración</span></label>
+              <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Mechas / Balayáge"><span>Mechas / Balayáge</span></label>
+              <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Alisado químico"><span>Alisado químico</span></label>
+              <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Botox / Nanoplastia"><span>Botox / Nanoplastia</span></label>
+              <div class="option-with-input">
+                <label class="option-pill"><input type="checkbox" name="historialQuimico" value="Otro"><span>Otro:</span></label>
+                <input type="text" id="historialOtro" name="historialOtro" placeholder="Especificar..." />
+              </div>
+            </div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="ultimoProceso">Último proceso químico</label>
+                <input type="text" id="ultimoProceso" name="ultimoProceso" placeholder="Ej. tinte hace 3 semanas" />
+              </div>
+              <div class="form-field">
+                <label>Frecuencia</label>
+                <div class="options-group" style="padding-top:8px;">
+                  <label class="option-pill"><input type="radio" name="frecuencia" value="Cada mes"><span>Cada mes</span></label>
+                  <label class="option-pill"><input type="radio" name="frecuencia" value="Cada 3 meses"><span>Cada 3 meses</span></label>
+                  <label class="option-pill"><input type="radio" name="frecuencia" value="Ocasional"><span>Ocasional</span></label>
+                  <label class="option-pill"><input type="radio" name="frecuencia" value="Primera vez"><span>Primera vez</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diagnóstico visual -->
+          <div class="subsection">
+            <div class="subsection-title">Diagnóstico visual</div>
+            <div class="options-group" style="margin-bottom:14px;">
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Opaco"><span>Opaco</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Sin brillo"><span>Sin brillo</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Áspero"><span>Áspero</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Quebradizo"><span>Quebradizo</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Elástico"><span>Elástico</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Con frizz"><span>Con frizz</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Puntas abiertas"><span>Puntas abiertas</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoVisual" value="Cutícula levantada"><span>Cutícula levantada</span></label>
+            </div>
+            <div class="form-field">
+              <label for="obsVisual">Observaciones</label>
+              <textarea id="obsVisual" name="obsVisual" placeholder="Observaciones del diagnóstico visual..."></textarea>
+            </div>
+          </div>
+
+          <!-- Prueba de porosidad -->
+          <div class="subsection">
+            <div class="subsection-title">Prueba de porosidad</div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Nivel de porosidad</label>
+                <div class="options-group" style="padding-top:8px;">
+                  <label class="option-pill"><input type="radio" name="porosidadNivel" value="Baja porosidad"><span>Baja</span></label>
+                  <label class="option-pill"><input type="radio" name="porosidadNivel" value="Porosidad media"><span>Media</span></label>
+                  <label class="option-pill"><input type="radio" name="porosidadNivel" value="Alta porosidad"><span>Alta</span></label>
+                </div>
+              </div>
+              <div class="form-field">
+                <label>Método de prueba</label>
+                <div class="options-group" style="padding-top:8px;">
+                  <label class="option-pill"><input type="checkbox" name="porosidadMetodo" value="Tacto"><span>Tacto</span></label>
+                  <label class="option-pill"><input type="checkbox" name="porosidadMetodo" value="Prueba del agua"><span>Prueba del agua</span></label>
+                  <label class="option-pill"><input type="checkbox" name="porosidadMetodo" value="Microscópica"><span>Microscópica</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="form-field" style="margin-top:14px;">
+              <label for="obsPorosidad">Observaciones</label>
+              <textarea id="obsPorosidad" name="obsPorosidad" placeholder="Observaciones de la prueba de porosidad..."></textarea>
+            </div>
+          </div>
+
+          <!-- Prueba de elasticidad -->
+          <div class="subsection">
+            <div class="subsection-title">Prueba de elasticidad</div>
+            <div class="options-group" style="margin-bottom:14px;">
+              <label class="option-pill"><input type="radio" name="elasticidad" value="Buena elasticidad"><span>Buena elasticidad</span></label>
+              <label class="option-pill"><input type="radio" name="elasticidad" value="Elasticidad baja"><span>Elasticidad baja</span></label>
+              <label class="option-pill"><input type="radio" name="elasticidad" value="Cabello rígido"><span>Cabello rígido</span></label>
+              <label class="option-pill"><input type="radio" name="elasticidad" value="Excesivamente elástico"><span>Excesivamente elástico</span></label>
+            </div>
+            <div class="form-field">
+              <label for="interpElasticidad">Interpretación</label>
+              <textarea id="interpElasticidad" name="interpElasticidad" placeholder="Interpretación de la prueba de elasticidad..."></textarea>
+            </div>
+          </div>
+
+          <!-- Necesidad del cabello -->
+          <div class="subsection">
+            <div class="subsection-title">Necesidad del cabello</div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>Estado del cabello</label>
+                <div class="options-group" style="padding-top:8px;">
+                  <label class="option-pill"><input type="checkbox" name="estadoCabello" value="Natural"><span>Natural</span></label>
+                  <label class="option-pill"><input type="checkbox" name="estadoCabello" value="Procesado químicamente"><span>Procesado químicamente</span></label>
+                  <label class="option-pill"><input type="checkbox" name="estadoCabello" value="Sensibilizado"><span>Sensibilizado</span></label>
+                  <label class="option-pill"><input type="checkbox" name="estadoCabello" value="Altamente dañado"><span>Altamente dañado</span></label>
+                </div>
+              </div>
+              <div class="form-field">
+                <label>Nivel de daño</label>
+                <div class="options-group" style="padding-top:8px;">
+                  <label class="option-pill"><input type="radio" name="nivelDano" value="Bajo"><span>Bajo</span></label>
+                  <label class="option-pill"><input type="radio" name="nivelDano" value="Medio"><span>Medio</span></label>
+                  <label class="option-pill"><input type="radio" name="nivelDano" value="Alto"><span>Alto</span></label>
+                  <label class="option-pill"><input type="radio" name="nivelDano" value="Crítico"><span>Crítico</span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diagnóstico final -->
+          <div class="subsection">
+            <div class="subsection-title">Diagnóstico final</div>
+            <div class="options-group" style="margin-bottom:14px;">
+              <label class="option-pill"><input type="checkbox" name="diagnosticoFinal" value="Hidratación"><span>Hidratación</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoFinal" value="Nutrición lipídica"><span>Nutrición lipídica</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoFinal" value="Reconstrucción proteica"><span>Reconstrucción proteica</span></label>
+              <label class="option-pill"><input type="checkbox" name="diagnosticoFinal" value="Reparación molecular"><span>Reparación molecular</span></label>
+            </div>
+            <div class="form-field">
+              <label for="cronogramaCapilar">Cronograma capilar</label>
+              <input type="text" id="cronogramaCapilar" name="cronogramaCapilar" placeholder="Ej. 4 semanas, cada 7 días..." />
+            </div>
+          </div>
+
+          <!-- Cronograma 3 semanas -->
+          <div class="subsection">
+            <div class="subsection-title">Cronograma de productos — 3 semanas</div>
+            <p class="schedule-legend">H = Hidratación &nbsp;·&nbsp; N = Nutrición &nbsp;·&nbsp; R = Reconstrucción / Reparación</p>
+
+            <div style="margin-bottom:20px;">
+              <div class="subsection-title" style="font-size:10px; margin-bottom:8px;">Semana 1</div>
+              <div class="form-field">
+                <input type="text" id="semana1" name="semana1" placeholder="Tratamiento de la semana 1..." />
+              </div>
+            </div>
+
+            <div style="margin-bottom:20px;">
+              <div class="subsection-title" style="font-size:10px; margin-bottom:8px;">Semana 2</div>
+              <div class="schedule-grid">
+                <div class="schedule-cell"><label for="s2_h">H</label><input type="text" id="s2_h" name="s2_h" placeholder="H" /></div>
+                <div class="schedule-cell"><label for="s2_n1">N</label><input type="text" id="s2_n1" name="s2_n1" placeholder="N" /></div>
+                <div class="schedule-cell"><label for="s2_r1">R</label><input type="text" id="s2_r1" name="s2_r1" placeholder="R" /></div>
+                <div class="schedule-cell"><label for="s2_n2">N</label><input type="text" id="s2_n2" name="s2_n2" placeholder="N" /></div>
+                <div class="schedule-cell"><label for="s2_r2">R</label><input type="text" id="s2_r2" name="s2_r2" placeholder="R" /></div>
+                <div class="schedule-cell"><label for="s2_r3">R</label><input type="text" id="s2_r3" name="s2_r3" placeholder="R" /></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="subsection-title" style="font-size:10px; margin-bottom:8px;">Semana 3</div>
+              <div class="schedule-grid">
+                <div class="schedule-cell"><label for="s3_h">H</label><input type="text" id="s3_h" name="s3_h" placeholder="H" /></div>
+                <div class="schedule-cell"><label for="s3_n1">N</label><input type="text" id="s3_n1" name="s3_n1" placeholder="N" /></div>
+                <div class="schedule-cell"><label for="s3_r1">R</label><input type="text" id="s3_r1" name="s3_r1" placeholder="R" /></div>
+                <div class="schedule-cell"><label for="s3_n2">N</label><input type="text" id="s3_n2" name="s3_n2" placeholder="N" /></div>
+                <div class="schedule-cell"><label for="s3_r2">R</label><input type="text" id="s3_r2" name="s3_r2" placeholder="R" /></div>
+                <div class="schedule-cell"><label for="s3_r3">R</label><input type="text" id="s3_r3" name="s3_r3" placeholder="R" /></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recomendaciones finales -->
+          <div class="subsection">
+            <div class="subsection-title">Recomendaciones finales</div>
+            <div class="options-group" style="margin-bottom:16px;">
+              <label class="option-pill"><input type="checkbox" name="recomendaciones" value="Hidratación lipídica"><span>Hidratación lipídica</span></label>
+              <label class="option-pill"><input type="checkbox" name="recomendaciones" value="Reconstrucción proteica"><span>Reconstrucción proteica</span></label>
+              <label class="option-pill"><input type="checkbox" name="recomendaciones" value="Reparación molecular"><span>Reparación molecular</span></label>
+            </div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="producto1">Producto 1</label>
+                <input type="text" id="producto1" name="producto1" placeholder="Nombre del producto..." />
+              </div>
+              <div class="form-field">
+                <label for="producto2">Producto 2</label>
+                <input type="text" id="producto2" name="producto2" placeholder="Nombre del producto..." />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTONES -->
+    <div class="form-actions">
+      <button type="button" class="btn btn-secondary" id="btnLimpiar">Limpiar formulario</button>
+      <div class="btn-group-right">
+        <button type="button" class="btn btn-outline" id="btnGuardar">Guardar borrador</button>
+        <button type="button" class="btn btn-primary" id="btnExcel">⬇ Descargar Excel</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
