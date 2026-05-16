@@ -1,6 +1,6 @@
 {
-  "name": "Diagnóstico Capilar — Studio Louis × HEBRÁN",
-  "short_name": "HEBRÁN",
+  "name": "Diagnóstico Capilar — Studio Louis",
+  "short_name": "Studio Louis",
   "description": "Formulario Unificado de Diagnóstico Capilar",
   "start_url": "./index.html",
   "scope": "./",

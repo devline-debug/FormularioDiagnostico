@@ -15,7 +15,7 @@
   <rect x="0" y="498" width="512" height="14" fill="url(#gold)"/>
   <!-- Icon content sits well within safe zone -->
   <text x="256" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="240" font-weight="700"
-        text-anchor="middle" fill="url(#gold)" letter-spacing="-5">H</text>
+        text-anchor="middle" fill="url(#gold)" letter-spacing="-5">SL</text>
   <text x="256" y="380" font-family="Arial, sans-serif" font-size="30" font-weight="300"
-        text-anchor="middle" fill="rgba(255,255,255,0.45)" letter-spacing="12">HEBRÁN</text>
+        text-anchor="middle" fill="rgba(255,255,255,0.45)" letter-spacing="12">Studio Louis</text>
 </svg>

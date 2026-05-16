@@ -13,7 +13,7 @@
   <rect width="512" height="512" rx="52" fill="url(#bg)"/>
   <rect x="0" y="496" width="512" height="16" rx="8" fill="url(#gold)"/>
   <text x="256" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="300" font-weight="700"
-        text-anchor="middle" fill="url(#gold)" letter-spacing="-6">H</text>
+        text-anchor="middle" fill="url(#gold)" letter-spacing="-6">SL</text>
   <text x="256" y="435" font-family="Arial, sans-serif" font-size="36" font-weight="300"
-        text-anchor="middle" fill="rgba(255,255,255,0.45)" letter-spacing="14">HEBRÁN</text>
+        text-anchor="middle" fill="rgba(255,255,255,0.45)" letter-spacing="14">Studio Louis</text>
 </svg>
