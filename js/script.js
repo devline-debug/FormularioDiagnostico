@@ -148,7 +148,6 @@ function exportExcel() {
     'Ocupación': getVal('ocupacion'),
     'Dirección': getVal('direccion'),
     'Fecha del diagnóstico': getVal('fechaDiagnostico'),
-    'Estilista / Alumna': getVal('estilista'),
   };
 
   const tecnico = {
